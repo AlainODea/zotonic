@@ -32,7 +32,7 @@ then
     export ZOTONIC=${ZOTONIC:=`python -c "import os,sys;print(os.path.realpath(\"$0/../..\"))"`}
 else
     export ZOTONIC=${ZOTONIC:=$(cd `dirname $0`/..;pwd)}
-fi 
+fi
 
 export ZOTONIC_SCRIPTS="$ZOTONIC/src/scripts"
 
@@ -63,4 +63,3 @@ else
     . $ZOTONIC_SCRIPTS/helpers/zotonic_teardown
     exit $EXIT
 fi
-

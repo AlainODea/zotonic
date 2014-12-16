@@ -6,9 +6,9 @@
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 #     http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -75,7 +75,7 @@ function find_config {
         fi
     done
 }
-export -f find_config 
+export -f find_config
 
 function find_config_arg {
     file=$(find_config $1)
@@ -95,7 +95,7 @@ function get_user_modules_dir {
     cat $(find_config zotonic.config) | grep {user_modules_dir|sed 's/.*"\(.*\)".*/\1/'
 }
 export -f get_user_modules_dir
-    
+
 export ZOTONIC_BIN=${ZOTONIC_BIN:=$ZOTONIC/bin}
 
 # Path to the Erlang VM
@@ -110,8 +110,8 @@ fi
 
 # Increase this if you expect a lot of concurrent connections. For example
 # if you use comet on popular pages.
-# Please check the documentation of your system on how to increase 
-# the maximum number of open files your operating system. 
+# Please check the documentation of your system on how to increase
+# the maximum number of open files your operating system.
 export MAX_PORTS=${MAX_PORTS:=$(ulimit -n|sed 's/unlimited/100000/')}
 
 # The maximum number of Erlang processes. Must be in the range
